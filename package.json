@@ -1,0 +1,23 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "description": "Programando servidor en Serverles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwinche90/Serverless.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwinche90/Serverless/issues"
+  },
+  "homepage": "https://github.com/edwinche90/Serverless#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
