@@ -2,6 +2,6 @@
     "version": 2,
     "name": "serverless",
     "routes": [
-        {"src": "/api/(.*)","dest": "/api/index.js"}
+        {"src": "/Serverless/api/(.*)","dest": "/Serverless/api/index.js"}
     ]
 }
