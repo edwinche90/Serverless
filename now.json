@@ -2,6 +2,9 @@
     "version": 2,
     "name": "serverless",
     "routes": [
-        {"src": "/Serverless/api/(.*)","dest": "/Serverless/api/index.js"}
-    ]
+        {"src": "/api/(.*)","dest": "/api/index.js"}
+    ],
+    "env": {
+        "MONGO_URI": "@mongodb-uri"
+    }
 }
