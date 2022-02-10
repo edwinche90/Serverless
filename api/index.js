@@ -11,11 +11,10 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser: true,useUnifiedTopology: true,
 .catch((err) =>console.error(err));
 
 
-const Users = mongoose.model('User', new mongoose.schema({name:String}))
-
-Users.create({name:'chanchito triste'})
-app.get('/index.jsn', (req, res)=>{
-    Users.find()
+const users = mongoose.model('User', new mongoose.schema({name:String}))
+users.create({name:'chanchito triste'})
+app.get('*', (req, res)=>{
+    users.find()
     .then(x => res.send(x))
 })
 /*app.get('*', (req, res) => {
