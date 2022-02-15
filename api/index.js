@@ -4,9 +4,9 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const meals = require('./routes/meals')
 const orders = require('./routes/orders')
-const app = express()
-require('dotenv').config();
 
+const app = express()
+require('dotenv').config()
 app.use(bodyParser.json())
 app.use(cors())
 
