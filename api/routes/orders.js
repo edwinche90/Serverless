@@ -3,7 +3,6 @@ const Orders = require('../models/Orders')
 const router = express.Router()
 const {isAuthenticated,hasRoles}= require('../auth')
 
-
 router.get('/',(req, res) => {
     Orders.find()
     .exec()

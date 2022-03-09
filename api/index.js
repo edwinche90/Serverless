@@ -5,12 +5,16 @@ const cors = require('cors')
 const meals = require('./routes/meals')
 const orders = require('./routes/orders')
 const auth = require('./routes/auth')
+const app = express();
 
-const app = express()
-require('dotenv').config()
-app.use(bodyParser.json())
+
 app.use(cors())
+app.use(bodyParser.json())
+app.use('/api/meals', meals)
+app.use('/api/orders', orders)
 
+app.use('/api/auth', auth)
+require('dotenv').config()
 
 //const MONGODB_URI = `mongodb+srv://almuerzimaster:41065029@almuerzi-db.wcjuj.mongodb.net/almuerzi?retryWrites=true&w=majority`
 
@@ -19,11 +23,6 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true,useUnifiedTopol
 .then((db) => console.log("Mongodb esta conectado en:", db.connection.host))
 .catch((err) =>console.error(err));
 
-
-app.use('/api/meals', meals)
-app.use('/api/orders', orders)
-
-app.use('/api/auth', auth)
 
 module.exports = app
 

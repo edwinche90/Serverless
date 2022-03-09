@@ -6,7 +6,7 @@ const isAuthenticated = (req,  res , next) => {
     if(!token){
         return res.sendStatus(403)
     }
-    jwt.verify(token, 'mi-secreto', (err, decoded) => {
+    jwt.verify(token,'mi-secreto',(err,decoded) => {
         const {_id} = decoded
         Users.findOne({_id}).exec()
         .then(user => {
@@ -16,14 +16,14 @@ const isAuthenticated = (req,  res , next) => {
     })
 }
 const hasRoles = roles => (req, res, next) => {
-    if (roles.IndexOf(req.user.role) >-1 ){
-        return next ()
+    if (roles.indexOf(req.user.role) >-1 ){
+        return next()
     }
     res.sendStatus(403)
 }
 
 module.exports = {
     isAuthenticated,
-    hasRoles
+    hasRoles,
 }
 

@@ -26,7 +26,7 @@ router.post('/register', (req,res) => {
                 Users.create({
                     email,
                     password: encryptedPassword,
-                    salt:newSalt,
+                    salt: newSalt,
                 }).then(() => {
                     res.send('usuario creado con exito')
                 })
@@ -56,4 +56,5 @@ router.post('/login', (req, res) => {
 router.get('/me', isAuthenticated, (req, res)=> {
     res.send(req.user)
 })
+
 module.exports= router
